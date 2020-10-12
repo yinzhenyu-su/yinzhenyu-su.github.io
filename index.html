@@ -17,19 +17,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"blog.bgm.fun","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="前端工程师">
+<meta property="og:type" content="website">
 <meta property="og:title" content="YZYの闲话">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://blog.bgm.fun/index.html">
 <meta property="og:site_name" content="YZYの闲话">
+<meta property="og:description" content="前端工程师">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="YZY">
-<meta property="article:tag" content="YZY,前端博客,nodejs,javascript,css,linux,html5">
+<meta property="article:tag" content="YZY,前端博客,nodejs,javascript,css,linux,html5,vue">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="https://blog.bgm.fun/">
 
 
 <script id="page-configurations">
@@ -115,9 +117,19 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-about">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
   </ul>
@@ -147,12 +159,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/12/2016-09-23-cat-system-config/">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2020/10/12/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
       <meta itemprop="name" content="YZY">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="前端工程师">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -161,7 +173,66 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/12/2016-09-23-cat-system-config/" class="post-title-link" itemprop="url">查看系统属性</a>
+            <a href="/2020/10/12/hexo/" class="post-title-link" itemprop="url">hexo 搭建 github page 记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-13 00:24:27 / 修改时间：00:38:08" itemprop="dateCreated datePublished" datetime="2020-10-13T00:24:27+08:00">2020-10-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="创建-github-page-repo"><a href="#创建-github-page-repo" class="headerlink" title="创建 github page repo"></a>创建 github page repo</h3><p>在GitHub中创建一个新的仓库，名称为 <strong>&lt;username&gt;.github.io</strong>，然后添加一个repo 部署密钥</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2016/09/22/2016-09-23-cat-system-config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
+      <meta itemprop="name" content="YZY">
+      <meta itemprop="description" content="前端工程师">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YZYの闲话">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/09/22/2016-09-23-cat-system-config/" class="post-title-link" itemprop="url">查看系统属性</a>
         </h2>
 
         <div class="post-meta">
@@ -171,8 +242,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-10-12 08:57:13" itemprop="dateCreated datePublished" datetime="2020-10-12T08:57:13+00:00">2020-10-12</time>
+              <time title="创建时间：2016-09-23 00:00:00" itemprop="dateCreated datePublished" datetime="2016-09-23T00:00:00+08:00">2016-09-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-13 00:38:08" itemprop="dateModified" datetime="2020-10-13T00:38:08+08:00">2020-10-13</time>
+              </span>
 
           
 
@@ -214,7 +292,7 @@
 <p><code>ps -ef</code><br>查看所有进程</p>
 <p><code>top</code><br>实时显示进程状态用户</p>
 <p><code>w</code><br>查看活动用户</p>
-<p><code>id </code>&lt;用户名&gt;``<br>查看指定用户信息</p>
+<p><code>id </code>&lt;用户名&gt;<br>查看指定用户信息</p>
 <p><code>last</code><br>查看用户登录日志</p>
 <p><code>cut -d: -f1 /etc/passwd</code><br>查看系统所有用户</p>
 <p><code>cut -d: -f1 /etc/group</code><br>查看系统所有组</p>
@@ -222,231 +300,6 @@
 <p><code>chkconfig –list</code><br>列出所有系统服务</p>
 <p><code>chkconfig –list | grep on</code><br>列出所有启动的系统服务程序</p>
 <p><code>rpm -qa</code><br>查看所有安装的软件包</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/12/2016-09-23-linux-git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
-      <meta itemprop="name" content="YZY">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YZYの闲话">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/12/2016-09-23-linux-git/" class="post-title-link" itemprop="url">linux git 使用记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-12 08:57:13" itemprop="dateCreated datePublished" datetime="2020-10-12T08:57:13+00:00">2020-10-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>名词解释<br><code>git push</code>将当前改动内容上传到服务器仓库<br><code>git pull</code>从服务器仓库中下载更新<br><code>git branch &lt;name&gt;</code>在本地创建名为<em>name</em>的分支<br><code>git checkout &lt;name&gt;</code>切换到<em>name</em>分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
-
-<p>创建上游分支并上传改动</p>
-<p>相关网站</p>
-<p>[github] <a target="_blank" rel="noopener" href="https://help.github.com/" title="gitthub官方帮助页面">1</a> 帮助页面</p>
-<p>[菜鸟教程] <a target="_blank" rel="noopener" href="http://www.runoob.com/w3cnote/git-guide.html" title="菜鸟教程">2</a></p>
-<p>[廖雪峰] <a target="_blank" rel="noopener" href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="git，python等">3</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/12/2016-10-10-msm8916/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
-      <meta itemprop="name" content="YZY">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YZYの闲话">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/12/2016-10-10-msm8916/" class="post-title-link" itemprop="url">红米2a高配版cpu调节</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-12 08:57:13" itemprop="dateCreated datePublished" datetime="2020-10-12T08:57:13+00:00">2020-10-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>高通骁龙410有效频率
-200000
-400000
-533333
-800000
-998400
-1094400
-1152000
-1209600</code></pre>
-<ol>
-<li><p>常见手机 cpu 调节器</p>
-<ul>
-<li><p><code>ondemand</code> 按需模式<br>按需调节 cpu 频率,不操作手机的时候控制在最低频率,滑屏或进入应用后会迅速提升至最高频率,当空闲时迅速降低频率,性能较稳定,但因频率变化幅度过大,省电方面只有一般的水平。是一种在电池和性能之间趋向平衡的默认模式,但是对于智能手机来说,ondemand 在性能表现方面略有欠缺。</p>
-</li>
-<li><p><code>hotplug</code> 热拔插模式<br>和 ondemand 模式差不多,当有高需求时直接跳到最高频率,当需求见效时逐级降低频率,但关屏时就单核低频运行,省电。</p>
-</li>
-<li><p><code>userspace</code> 用户模式<br>任何情况下都会控制 CPU 运行在配置的频率范围内,配置中的用户自己添加的省电设置。在此情景模式下,降低 CPU 最大运行频率可以延长电池待机时间,但同时也会降低机器的唤醒速度,建议最好不使用该选项。</p>
-</li>
-<li><p><code>interactive</code> 交互模式<br>和 ondemand 相似,规则是“快升慢降”,注重响应速度、性能,当有高需求时迅速跳到高频率,当低需求时逐渐降低频率,相比 ondemand 费电</p>
-</li>
-<li><p><code>performance</code> 高性能模式<br>高性能模式,按你设定范围的最高频率运行,即使系统负载非常低 cpu 的频率也为最高。性能很好,因为 CPU 本身不需要资源去调整频率,但是电量消耗较快,温度也高一些。</p>
-</li>
-</ul>
-</li>
-<li><p><code>interactive</code> 交互模式参数介绍</p>
-<ul>
-<li><code>timer_rate</code> 计时器频率</li>
-<li><code>hispeed_freq</code> 默认的较高频率</li>
-<li><code>go_hispeed_load</code> 启用<code>hispeed_freq</code>的阀值<br>定义：当 workload 到达此阀值时提升频率至<code>hispeed_freq</code></li>
-<li><code>above_highspeed_delay</code> 启用超高频率延迟<br>定义：当<em>CPU 频率</em>大于等于<code>hispeed_freq</code>，并且此时 workload 仍在不停增加，系统将等待一个<code>above_hispeed_delay</code>的时间。<br><code>above_hispeed_delay</code>一般是这样一种格式，一个单个的延时数值，后面跟上一组由 CPU speeds 和 delay 组成的数组，由冒号隔开。例如： <code>80000 1300000:200000 1500000:40000</code></li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/12/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
-      <meta itemprop="name" content="YZY">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YZYの闲话">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-12 08:57:13" itemprop="dateCreated datePublished" datetime="2020-10-12T08:57:13+00:00">2020-10-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
@@ -523,16 +376,21 @@
     <img class="site-author-image" itemprop="image" alt="YZY"
       src="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
   <p class="site-author-name" itemprop="name">YZY</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">前端工程师</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">4</span>
+          <a href="/archives">
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -572,8 +430,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">YZY</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
 
         
 
@@ -598,7 +454,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
