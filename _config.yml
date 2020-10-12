@@ -5,15 +5,15 @@
 # Site
 title: YZYの闲话
 subtitle: 'YZY每天划水的地方'
-description: ''
-keywords: YZY,前端博客,nodejs,javascript,css,linux,html5
+description: '前端工程师'
+keywords: YZY,前端博客,nodejs,javascript,css,linux,html5,vue
 author: YZY
 language: zh-CN
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://blog.bgm.fun
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -50,7 +50,7 @@ highlight:
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
