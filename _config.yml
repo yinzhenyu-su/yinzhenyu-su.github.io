@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: YZYの闲话
+subtitle: 'YZY每天划水的地方'
 description: ''
-keywords:
-author: John Doe
-language: en
+keywords: YZY,前端博客,nodejs,javascript,css,linux,html5
+author: YZY
+language: zh-CN
 timezone: ''
 
 # URL
@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
