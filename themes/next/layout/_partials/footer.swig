@@ -19,6 +19,8 @@
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
 
+  <img src="https://api.travis-ci.com/yinzhenyu-su/yinzhenyu-su.github.io.svg"/>
+
   {%- if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
