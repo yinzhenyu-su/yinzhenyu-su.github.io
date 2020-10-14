@@ -190,7 +190,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 14:01:30" itemprop="dateModified" datetime="2020-10-14T14:01:30+08:00">2020-10-14</time>
+                <time title="修改时间：2020-10-14 15:16:21" itemprop="dateModified" datetime="2020-10-14T15:16:21+08:00">2020-10-14</time>
               </span>
 
           
@@ -243,7 +243,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2016/09/23/2016-09-23-cat-system-config/">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2018/11/19/linux-iptables/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
@@ -257,7 +257,80 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2016/09/23/2016-09-23-cat-system-config/" class="post-title-link" itemprop="url">查看系统属性</a>
+            <a href="/2018/11/19/linux-iptables/" class="post-title-link" itemprop="url">iptables 用法简介</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-11-19 16:16:00" itemprop="dateCreated datePublished" datetime="2018-11-19T16:16:00+08:00">2018-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-14 15:16:21" itemprop="dateModified" datetime="2020-10-14T15:16:21+08:00">2020-10-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="清除规则"><a href="#清除规则" class="headerlink" title="清除规则"></a>清除规则</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -F<br>iptables -X<br>iptables -Z<br></code></pre></td></tr></table></figure>
+
+<h3 id="设置政策"><a href="#设置政策" class="headerlink" title="设置政策"></a>设置政策</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -P INPUT DROP<br>iptables -P OUTPUT ACCEPT<br>iptables -P FORWARD ACCEPT<br></code></pre></td></tr></table></figure>
+
+<h3 id="允许正常包-开放-0-1024-端口"><a href="#允许正常包-开放-0-1024-端口" class="headerlink" title="允许正常包,开放 0:1024 端口"></a>允许正常包,开放 0:1024 端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -A INPUT -i lo -j ACCEPT<br>iptables -A INPUT -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT<br>iptables -A INPUT -i eth0 -p tcp --dport 0:1024 -j ACCEPT<br></code></pre></td></tr></table></figure>
+
+<h3 id="开放特殊端口"><a href="#开放特殊端口" class="headerlink" title="开放特殊端口"></a>开放特殊端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">ex_port=<span class="hljs-string">&quot;3306 6379 5000 8000 8080&quot;</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-variable">$ex_port</span><br><span class="hljs-keyword">do</span><br> iptables -A INPUT -i eth0 -p tcp --dport <span class="hljs-variable">$t</span> -j ACCEPT<br> iptables -A INPUT -i eth0 -p udp --dport <span class="hljs-variable">$t</span> -j ACCEPT<br><span class="hljs-keyword">done</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="icmp-设置"><a href="#icmp-设置" class="headerlink" title="icmp 设置"></a>icmp 设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">icmp_type=<span class="hljs-string">&quot;0 3 4 11 12 14 16 18&quot;</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-variable">$icmp_type</span><br><span class="hljs-keyword">do</span><br> iptables -A INPUT -i eth0 -p icmp --icmp-type <span class="hljs-variable">$t</span> -j ACCEPT<br><span class="hljs-keyword">done</span><br><br>iptables -A INPUT -i eth0 -p icmp --icmp-type 8 -j DROP<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2016/09/23/linux-cat-system-config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
+      <meta itemprop="name" content="YZY">
+      <meta itemprop="description" content="前端工程师">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YZYの闲话">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/09/23/linux-cat-system-config/" class="post-title-link" itemprop="url">查看linux系统属性常用命令</a>
         </h2>
 
         <div class="post-meta">
@@ -274,7 +347,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 14:01:30" itemprop="dateModified" datetime="2020-10-14T14:01:30+08:00">2020-10-14</time>
+                <time title="修改时间：2020-10-14 15:16:21" itemprop="dateModified" datetime="2020-10-14T15:16:21+08:00">2020-10-14</time>
               </span>
 
           
@@ -407,14 +480,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
