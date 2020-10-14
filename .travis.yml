@@ -1,18 +1,23 @@
-sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v10 LTS
+  - 12
 cache: npm
+os: linux # linux of windows
+dist: bionic # bionic for 18.04, focal for 20.04 ,default is xenial 16.04
 branches:
   only:
     - master # build master branch only
+before_install:
+  - export TZ='Asia/Shanghai'
+install:
+  - npm install
 script:
   - hexo generate # generate static files
 deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
+  skip_cleanup: true
+  keep_history: true
+  token: $GH_TOKEN
   on:
     branch: master
-  local-dir: public
+  local_dir: public
