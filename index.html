@@ -135,7 +135,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">4</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -172,6 +172,67 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2020/11/05/webchunk-filename/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16461374?s=460&u=195d14eca37c1dfd2ba9d35f3a6d104892cfa533&v=4">
+      <meta itemprop="name" content="YZY">
+      <meta itemprop="description" content="前端工程师">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YZYの闲话">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/05/webchunk-filename/" class="post-title-link" itemprop="url">解决设置 webpackChunkName 后打包异常的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-05 19:58:54 / 修改时间：20:11:48" itemprop="dateCreated datePublished" datetime="2020-11-05T19:58:54+08:00">2020-11-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="如何解决设置-webpackChunkName-后，打包文件异常的问题"><a href="#如何解决设置-webpackChunkName-后，打包文件异常的问题" class="headerlink" title="如何解决设置 webpackChunkName 后，打包文件异常的问题"></a>如何解决设置 webpackChunkName 后，打包文件异常的问题</h3><p>   在配置 vue-route 时，设置了 webpackChunkName 后发现打包完成后的部分 ChunkFile 文件夹异常，经过排查后发现 <code>/* ChunkFileName: &quot;anyChunkName&quot; */</code> 后面没有加空格就会导致webpack解析 ChunkName 时会出错，生成了奇怪的文件夹。从而导致打出来的包有关这个ChunkName的功能都不能正常使用。</p>
+<p>   示例代码：（注意路径前要有空格）</p>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>  name: <span class="hljs-string">&#x27;About&#x27;</span>,<br>  path: <span class="hljs-string">&#x27;/About&#x27;</span>,<br>  component: <span class="hljs-function">() =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-comment">/* webpackChunkName: &quot;About&quot; */</span> <span class="hljs-string">&#x27;../views/About.vue&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2020/10/13/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -203,7 +264,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 18:20:33" itemprop="dateModified" datetime="2020-10-14T18:20:33+08:00">2020-10-14</time>
+                <time title="修改时间：2020-11-05 20:11:48" itemprop="dateModified" datetime="2020-11-05T20:11:48+08:00">2020-11-05</time>
               </span>
 
           
@@ -287,7 +348,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 18:20:33" itemprop="dateModified" datetime="2020-10-14T18:20:33+08:00">2020-10-14</time>
+                <time title="修改时间：2020-11-05 20:11:48" itemprop="dateModified" datetime="2020-11-05T20:11:48+08:00">2020-11-05</time>
               </span>
 
           
@@ -360,7 +421,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 18:20:33" itemprop="dateModified" datetime="2020-10-14T18:20:33+08:00">2020-10-14</time>
+                <time title="修改时间：2020-11-05 20:11:48" itemprop="dateModified" datetime="2020-11-05T20:11:48+08:00">2020-11-05</time>
               </span>
 
           
@@ -493,14 +554,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
