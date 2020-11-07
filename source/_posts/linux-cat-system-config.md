@@ -3,6 +3,8 @@ title: 查看linux系统属性常用命令
 date: 2016-09-23
 tags:
   - [linux]
+category: 
+  - [linux]
 ---
 
 `uname -a`

@@ -3,6 +3,8 @@ title: iptables 用法简介
 date: 2018-11-19 16:16:00
 tags:
   - [linux iptables]
+category: 
+  - [linux]
 ---
 
 ### 清除规则
