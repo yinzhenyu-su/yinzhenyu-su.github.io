@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ config.language }}">
 <head>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/{{ theme.codeblock.code_theme }}.min.css">
+  {% if theme.codeblock.code_theme %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/{{ theme.codeblock.code_theme }}.min.css">
+  {% endif %}
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
   {% include '_partials/head/head-unique.swig' %}
   {{- next_inject('head') }}
