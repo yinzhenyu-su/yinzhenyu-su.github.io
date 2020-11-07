@@ -10,7 +10,7 @@ tags:
 
 ### 操作流程
 
-1. 在项目根目录中新建`_config.yml`文件并添加如下配置
+1. 在项目根目录中新建`_config.yml`文件并添加如下配置a
 
    ```yml
    language: node_js
@@ -37,25 +37,28 @@ tags:
        branch: master
      local_dir: public
    ```
+<!--more-->
 
 2. 打开 [github token](https://github.com/settings/tokens 'github Token 配置') 设置页面生成新 token，只勾选 repo 权限即可，然后点击复制按钮将 token 复制到剪贴板上，要注意的是 token 只能查看一次，如果没有复制保存，需要重新生成 token。
-   ![](/images/hexo/githubTokenList.png 'token列表')
-   ![](/images/hexo/newRepoToken.png '生成新token')
-   ![](/images/hexo/copyNewToken.png '复制新生成的token')
+   ![token列表](/images/hexo/githubTokenList.png 'token列表')
+   ![生成新token](/images/hexo/newRepoToken.png '生成新token')
+   ![复制新生成的token](/images/hexo/copyNewToken.png '复制新生成的token')
 
 3. 打开 [travis-ci 官网](https://travis-ci.org) 进入仓库设置页面，添加环境变量`GH_TOKEN`值为上一步复制的 token。
    <!-- ![](/images/hexo/travis-auth.png 'travis 授权') -->
 
-   ![](/images/hexo/travis-setting.png 'travis 仓库设置')
+   ![travis 仓库设置](/images/hexo/travis-setting.png 'travis 仓库设置')
 
 4. 在以上步骤完成后就可以提交本地代码到 github 了。
+
    ```bash
-   $ git add .
-   $ git commit -m 'Your Commit Message'
-   $ get push
+   git add .
+   git commit -m 'Your Commit Message'
+   get push
    ```
+
 5. 等待 2 分钟左右就可以在 github 上看到 travis 提交的合并请求,确认后进入仓库设置页面，把 GitHub Pages 页面分支切换为`gh-page`分支。
-   ![](/images/hexo/github-gh-page.png 'GitHub Page 设置')
+   ![GitHub Page 设置](/images/hexo/github-gh-page.png 'GitHub Page 设置')
 
 ### 后记
 

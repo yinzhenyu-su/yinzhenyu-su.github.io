@@ -20,7 +20,7 @@ iptables -P INPUT DROP
 iptables -P OUTPUT ACCEPT
 iptables -P FORWARD ACCEPT
 ```
-
+<!--more-->
 ### 允许正常包,开放 0:1024 端口
 
 ```bash
