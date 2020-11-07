@@ -176,7 +176,7 @@ body {
 body {
   background: var(--body-bg-color);
   color: var(--text-color);
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code, Consolas, Courier New, monospace', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
   line-height: 2;
 }
@@ -192,7 +192,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code, Consolas, Courier New, monospace', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 20px 0 15px;
@@ -382,55 +382,10 @@ td {
   transform: rotate(45deg);
   top: -5px;
 }
-.highlight-container {
-  position: relative;
-}
-.highlight-container:hover .copy-btn,
-.highlight-container .copy-btn:focus {
-  opacity: 1;
-}
-.copy-btn {
-  color: #333;
-  cursor: pointer;
-  line-height: 1.6;
-  opacity: 0;
-  padding: 2px 6px;
-  position: absolute;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  color: #fff;
-  font-size: 14px;
-  right: 0;
-  top: 2px;
-}
-.highlight-container {
-  background: #21252b;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
-  padding-top: 30px;
-}
-.highlight-container::before {
-  background: #fc625d;
-  border-radius: 50%;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  content: ' ';
-  height: 12px;
-  left: 12px;
-  margin-top: -20px;
-  position: absolute;
-  width: 12px;
-}
-.highlight-container .highlight {
-  border-radius: 0 0 5px 5px;
-}
-.highlight-container .highlight .table-container {
-  border-radius: 0 0 5px 5px;
-}
 .highlight,
 pre {
-  background: #002b36;
-  color: #93a1a1;
+  background: #f7f7f7;
+  color: #4d4d4c;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -447,7 +402,7 @@ code {
   word-wrap: break-word;
 }
 .highlight *::selection {
-  background: #073642;
+  background: #d6d6d6;
 }
 .highlight pre {
   border: 0;
@@ -464,8 +419,8 @@ code {
   padding: 0;
 }
 .highlight figcaption {
-  background: #002b36;
-  color: #93a1a1;
+  background: #eff2f3;
+  color: #4d4d4c;
   display: flex;
   font-size: 0.875em;
   justify-content: space-between;
@@ -473,10 +428,10 @@ code {
   padding: 0.5em;
 }
 .highlight figcaption a {
-  color: #93a1a1;
+  color: #4d4d4c;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #93a1a1;
+  border-bottom-color: #4d4d4c;
 }
 .highlight .gutter {
   -moz-user-select: none;
@@ -485,14 +440,14 @@ code {
   user-select: none;
 }
 .highlight .gutter pre {
-  background: #002b36;
-  color: #586e75;
+  background: #eff2f3;
+  color: #869194;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #002b36;
+  background: #f7f7f7;
   padding-left: 10px;
   width: 100%;
 }
@@ -508,7 +463,7 @@ pre {
 }
 pre code {
   background: none;
-  color: #93a1a1;
+  color: #4d4d4c;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
@@ -520,14 +475,14 @@ pre .addition {
   background: #008000;
 }
 pre .meta {
-  color: #b58900;
+  color: #eab700;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #586e75;
+  color: #8e908c;
 }
 pre .variable,
 pre .attribute,
@@ -542,7 +497,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #dc322f;
+  color: #c82829;
 }
 pre .number,
 pre .preprocessor,
@@ -552,7 +507,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #cb4b16;
+  color: #f5871f;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -565,11 +520,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #859900;
+  color: #718c00;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #2aa198;
+  color: #3e999f;
 }
 pre .function,
 pre .python .decorator,
@@ -579,11 +534,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #268bd2;
+  color: #4271ae;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #6c71c4;
+  color: #8959a8;
 }
 .blockquote-center {
   border-left: none;
@@ -1037,7 +992,7 @@ pre .javascript .function {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code, Consolas, Courier New, monospace', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   margin: 0;
@@ -1286,7 +1241,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff166a;
+  background: #feffc9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1606,10 +1561,7 @@ pre .javascript .function {
   position: fixed;
   transition-property: bottom;
   z-index: 1300;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #fc6423;
@@ -1624,7 +1576,7 @@ pre .javascript .function {
   }
 }
 .post-body {
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code, Consolas, Courier New, monospace', "PingFang SC", "Microsoft YaHei", sans-serif;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1922,7 +1874,7 @@ pre .javascript .function {
 }
 .posts-expand .post-meta {
   color: #999;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code, Consolas, Courier New, monospace', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 0.75em;
   margin: 3px 0 60px 0;
   text-align: center;
@@ -2666,4 +2618,10 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.hljs {
+  background: rgba(0,0,0,0);
+}
+tbody tr:nth-of-type(odd) {
+  background: rgba(0,0,0,0);
 }

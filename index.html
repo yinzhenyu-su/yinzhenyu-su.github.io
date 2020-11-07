@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115766164-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-115766164-3');
-</script>
-
-
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/vs.min.css">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -25,10 +15,11 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"blog.bgm.fun","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"blog.bgm.fun","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="前端工程师">
@@ -57,8 +48,26 @@
 
   <title>YZYの闲话</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115766164-3"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-115766164-3');
+      }
+    </script>
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0de664f318f3df9f2c2b1b6d58651cd3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -195,10 +204,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-05 19:58:54 / 修改时间：20:11:48" itemprop="dateCreated datePublished" datetime="2020-11-05T19:58:54+08:00">2020-11-05</time>
+              <time title="创建时间：2020-11-05 19:58:54" itemprop="dateCreated datePublished" datetime="2020-11-05T19:58:54+08:00">2020-11-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-07 14:06:48" itemprop="dateModified" datetime="2020-11-07T14:06:48+08:00">2020-11-07</time>
+              </span>
 
           
 
@@ -264,7 +279,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-05 20:11:48" itemprop="dateModified" datetime="2020-11-05T20:11:48+08:00">2020-11-05</time>
+                <time title="修改时间：2020-11-07 14:06:48" itemprop="dateModified" datetime="2020-11-07T14:06:48+08:00">2020-11-07</time>
               </span>
 
           
@@ -280,25 +295,16 @@
       
           <p>闲来无事，又开始了自己搭建博客的计划，之前断断续续用过 WordPress，typecho 等博客系统，慢慢发现自己写的文章还没有系统代码多，有很多功能自己并不能用上。现在转行做了前端，于是决定从前端的生态搞起，用 hexo 重新搭建博客页面。本篇文章主要讲一下在博客生成完之后如何使用 Travis CI 自动生成博客并提交到 gh-page 分支上。</p>
 <h3 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h3><ol>
-<li><p>在项目根目录中新建<code>_config.yml</code>文件并添加如下配置</p>
+<li><p>在项目根目录中新建<code>_config.yml</code>文件并添加如下配置a</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span><br><span class="hljs-attr">node_js:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-number">12</span><br><span class="hljs-attr">cache:</span> <span class="hljs-string">npm</span><br><span class="hljs-attr">os:</span> <span class="hljs-string">linux</span> <span class="hljs-comment"># linux of windows</span><br><span class="hljs-attr">dist:</span> <span class="hljs-string">bionic</span> <span class="hljs-comment"># bionic for 18.04, focal for 20.04 ,default is xenial 16.04</span><br><span class="hljs-attr">branches:</span><br>  <span class="hljs-attr">only:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-string">master</span> <span class="hljs-comment"># build master branch only</span><br><span class="hljs-attr">before_install:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">export</span> <span class="hljs-string">TZ=&#x27;Asia/Shanghai&#x27;</span><br><span class="hljs-attr">install:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span><br><span class="hljs-attr">script:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span> <span class="hljs-comment"># generate static files</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">provider:</span> <span class="hljs-string">pages</span><br>  <span class="hljs-attr">skip_cleanup:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">keep_history:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">token:</span> <span class="hljs-string">$GH_TOKEN</span><br>  <span class="hljs-attr">on:</span><br>    <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br>  <span class="hljs-attr">local_dir:</span> <span class="hljs-string">public</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>打开 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/settings/tokens" title="github Token 配置">github token</a> 设置页面生成新 token，只勾选 repo 权限即可，然后点击复制按钮将 token 复制到剪贴板上，要注意的是 token 只能查看一次，如果没有复制保存，需要重新生成 token。<br><img src="/images/hexo/githubTokenList.png" title="token列表"><br><img src="/images/hexo/newRepoToken.png" title="生成新token"><br><img src="/images/hexo/copyNewToken.png" title="复制新生成的token"></p>
-</li>
-<li><p>打开 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://travis-ci.org/">travis-ci 官网</a> 进入仓库设置页面，添加环境变量<code>GH_TOKEN</code>值为上一步复制的 token。</p>
-<!-- ![](/images/hexo/travis-auth.png 'travis 授权') -->
-
-<p><img src="/images/hexo/travis-setting.png" title="travis 仓库设置"></p>
-</li>
-<li><p>在以上步骤完成后就可以提交本地代码到 github 了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git add .<br>$ git commit -m <span class="hljs-string">&#x27;Your Commit Message&#x27;</span><br>$ get push<br></code></pre></td></tr></table></figure></li>
-<li><p>等待 2 分钟左右就可以在 github 上看到 travis 提交的合并请求,确认后进入仓库设置页面，把 GitHub Pages 页面分支切换为<code>gh-page</code>分支。<br><img src="/images/hexo/github-gh-page.png" title="GitHub Page 设置"></p>
-</li>
-</ol>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><blockquote>
-<p>操作完成后，每次提交代码就会自动构建并生成博客页面了。后面对于 hexo 的配置会新开一个帖子进行记录，happy coding！。<br>由于 github 国内访问速度较慢所以本网站使用了 <code>nginx</code> 反向代理。</p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/13/hexo/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -348,7 +354,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-05 20:11:48" itemprop="dateModified" datetime="2020-11-05T20:11:48+08:00">2020-11-05</time>
+                <time title="修改时间：2020-11-07 14:06:48" itemprop="dateModified" datetime="2020-11-07T14:06:48+08:00">2020-11-07</time>
               </span>
 
           
@@ -365,13 +371,14 @@
           <h3 id="清除规则"><a href="#清除规则" class="headerlink" title="清除规则"></a>清除规则</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -F<br>iptables -X<br>iptables -Z<br></code></pre></td></tr></table></figure>
 
 <h3 id="设置政策"><a href="#设置政策" class="headerlink" title="设置政策"></a>设置政策</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -P INPUT DROP<br>iptables -P OUTPUT ACCEPT<br>iptables -P FORWARD ACCEPT<br></code></pre></td></tr></table></figure>
-
-<h3 id="允许正常包-开放-0-1024-端口"><a href="#允许正常包-开放-0-1024-端口" class="headerlink" title="允许正常包,开放 0:1024 端口"></a>允许正常包,开放 0:1024 端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">iptables -A INPUT -i lo -j ACCEPT<br>iptables -A INPUT -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT<br>iptables -A INPUT -i eth0 -p tcp --dport 0:1024 -j ACCEPT<br></code></pre></td></tr></table></figure>
-
-<h3 id="开放特殊端口"><a href="#开放特殊端口" class="headerlink" title="开放特殊端口"></a>开放特殊端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">ex_port=<span class="hljs-string">&quot;3306 6379 5000 8000 8080&quot;</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-variable">$ex_port</span><br><span class="hljs-keyword">do</span><br> iptables -A INPUT -i eth0 -p tcp --dport <span class="hljs-variable">$t</span> -j ACCEPT<br> iptables -A INPUT -i eth0 -p udp --dport <span class="hljs-variable">$t</span> -j ACCEPT<br><span class="hljs-keyword">done</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="icmp-设置"><a href="#icmp-设置" class="headerlink" title="icmp 设置"></a>icmp 设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">icmp_type=<span class="hljs-string">&quot;0 3 4 11 12 14 16 18&quot;</span><br><span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> <span class="hljs-variable">$icmp_type</span><br><span class="hljs-keyword">do</span><br> iptables -A INPUT -i eth0 -p icmp --icmp-type <span class="hljs-variable">$t</span> -j ACCEPT<br><span class="hljs-keyword">done</span><br><br>iptables -A INPUT -i eth0 -p icmp --icmp-type 8 -j DROP<br></code></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/11/19/linux-iptables/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -421,7 +428,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-05 20:11:48" itemprop="dateModified" datetime="2020-11-05T20:11:48+08:00">2020-11-05</time>
+                <time title="修改时间：2020-11-07 14:06:48" itemprop="dateModified" datetime="2020-11-07T14:06:48+08:00">2020-11-07</time>
               </span>
 
           
@@ -441,38 +448,14 @@
 <p><code>hostname</code><br>查看计算机名</p>
 <p><code>lspci -tv</code><br>列出所有 PCI 设备</p>
 <p><code>lsusb -tv</code><br>列出所有 USB 设备</p>
-<p><code>lsmod</code><br>列出加载的内核模块</p>
-<p><code>env</code><br>查看环境变量资源</p>
-<p><code>free -m</code><br>查看内存使用量和交换区使用量</p>
-<p><code>df -h</code><br>查看各分区使用情况</p>
-<p><code>du -sh </code>&lt;目录名&gt;``<br>查看指定目录的大小</p>
-<p><code>grep MemTotal /proc/meminfo</code><br>查看内存总量</p>
-<p><code>grep MemFree /proc/meminfo</code><br>查看空闲内存量</p>
-<p><code>uptime</code><br>查看系统运行时间、用户数、负载</p>
-<p><code>cat /proc/loadavg</code><br>查看系统负载磁盘和分区</p>
-<p><code>mount | column -t</code><br>查看挂接的分区状态</p>
-<p><code>fdisk -l</code><br>查看所有分区</p>
-<p><code>swapon -s</code><br>查看所有交换分区</p>
-<p><code>hdparm -i /dev/hda</code><br>查看磁盘参数(仅适用于 IDE 设备)</p>
-<p><code>dmesg | grep IDE</code><br>查看启动时 IDE 设备检测状况网络</p>
-<p><code>ifconfig</code><br>查看所有网络接口的属性</p>
-<p><code>iptables -L</code><br>查看防火墙设置</p>
-<p><code>route -n</code><br>查看路由表</p>
-<p><code>netstat -lntp</code><br>查看所有监听端口</p>
-<p><code>netstat -antp</code><br>查看所有已经建立的连接</p>
-<p><code>netstat -s</code><br>查看网络统计信息进程</p>
-<p><code>ps -ef</code><br>查看所有进程</p>
-<p><code>top</code><br>实时显示进程状态用户</p>
-<p><code>w</code><br>查看活动用户</p>
-<p><code>id </code>&lt;用户名&gt;<br>查看指定用户信息</p>
-<p><code>last</code><br>查看用户登录日志</p>
-<p><code>cut -d: -f1 /etc/passwd</code><br>查看系统所有用户</p>
-<p><code>cut -d: -f1 /etc/group</code><br>查看系统所有组</p>
-<p><code>crontab -l</code><br>查看当前用户的计划任务服务</p>
-<p><code>chkconfig –list</code><br>列出所有系统服务</p>
-<p><code>chkconfig –list | grep on</code><br>列出所有启动的系统服务程序</p>
-<p><code>rpm -qa</code><br>查看所有安装的软件包</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/09/23/linux-cat-system-config/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -620,6 +603,8 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
