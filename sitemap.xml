@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://blog.bgm.fun/categories/index.html</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/index.html</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/2020/10/13/hexo/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/2016/09/23/linux-cat-system-config/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/2018/11/19/linux-iptables/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/2020/11/07/svn-observer/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/2020/11/10/tsconfig-types/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/2020/11/05/webchunk-filename/</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/about/index.html</loc>
+    
+    <lastmod>2020-11-10</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://blog.bgm.fun/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/hexo/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/travis-ci/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/linux/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/linux-iptables/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/nodejs/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/javascript/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/svn/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/typescript/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/tsconfig/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/webpack/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/js/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/vue/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://blog.bgm.fun/categories/hexo/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/categories/linux/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/categories/svn/</loc>
+    <lastmod>2020-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
