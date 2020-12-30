@@ -30,6 +30,13 @@
   </url>
   
   <url>
+    <loc>https://blog.bgm.fun/2020/11/25/prose-mirror/</loc>
+    
+    <lastmod>2020-12-30</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.bgm.fun/2020/11/07/svn-observer/</loc>
     
     <lastmod>2020-12-30</lastmod>
@@ -102,6 +109,20 @@
   </url>
   
   <url>
+    <loc>https://blog.bgm.fun/tags/proseMirror/</loc>
+    <lastmod>2020-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/tags/tiptap/</loc>
+    <lastmod>2020-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.bgm.fun/tags/nodejs/</loc>
     <lastmod>2020-12-30</lastmod>
     <changefreq>daily</changefreq>
@@ -168,6 +189,13 @@
   
   <url>
     <loc>https://blog.bgm.fun/categories/linux/</loc>
+    <lastmod>2020-12-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.bgm.fun/categories/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
     <lastmod>2020-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
