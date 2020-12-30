@@ -415,7 +415,7 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Georgia, -apple-system, 'Nimbus Roman No9 L', 'PingFang SC', 'Hiragino Sans GB', 'Noto Serif SC', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
+    family: Noto Serif SC
     size:
 
   # Font settings for site title (.site-title).
