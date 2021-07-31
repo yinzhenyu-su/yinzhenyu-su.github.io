@@ -149,12 +149,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">14</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">5</span></a>
 
   </li>
   </ul>
@@ -182,6 +182,86 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2021/07/31/css-inline-fixed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/11/07/uBjhviVpEDtfk9x.jpg">
+      <meta itemprop="name" content="YZY">
+      <meta itemprop="description" content="前端工程师">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YZYの闲话">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/31/css-inline-fixed/" class="post-title-link" itemprop="url">Git 常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-31 09:59:15 / 修改时间：10:46:08" itemprop="dateCreated datePublished" datetime="2021-07-31T09:59:15+08:00">2021-07-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="CSS-如何固定导航目录"><a href="#CSS-如何固定导航目录" class="headerlink" title="CSS 如何固定导航目录"></a>CSS 如何固定导航目录</h3><blockquote>
+<p>在博客页面中有一个很常用的布局是文章主题居中，目录居左或居右固定，那么这个布局要如何用CSS渲染出来呢<br>不多说，直接上代码</p>
+</blockquote>
+<ol>
+<li><p>html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;wrapper&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;main-page&quot;</span>&gt;</span><br>		内容<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-block&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-inner&quot;</span>&gt;</span><br>			目录<br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#EEEEEE</span>;<br>&#125;<br><br><span class="hljs-selector-class">.wrapper</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;<br>    <span class="hljs-attribute">margin</span>: auto;<br>    <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;<br>&#125;<br><br><span class="hljs-selector-class">.main-page</span> &#123;<br>    <span class="hljs-attribute">display</span>: inline-block;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">9999px</span>;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;<br>    <span class="hljs-attribute">background</span>: white;<br>&#125;<br><br><span class="hljs-selector-class">.nav-block</span> &#123;<br>    <span class="hljs-attribute">display</span>: inline-block;<br>    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">position</span>: fixed;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">30px</span>;<br>    <span class="hljs-attribute">background-color</span>: white;<br>&#125;<br><br><span class="hljs-selector-class">.nav-inner</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">120px</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Online-Demo"><a href="#Online-Demo" class="headerlink" title="Online Demo"></a>Online Demo</h3><p> <a target="_blank" rel="noopener external nofollow noreferrer" href="http://jsrun.net/M38Kp">点我查看</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -217,7 +297,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,7 +370,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
 
           
@@ -362,7 +442,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -461,7 +541,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
 
           
@@ -528,7 +608,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -612,7 +692,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -695,7 +775,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-24 22:42:38" itemprop="dateModified" datetime="2021-06-24T22:42:38+08:00">2021-06-24</time>
+                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -808,20 +888,20 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
