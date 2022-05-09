@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.bgm.fun/2021/07/31/css-inline-fixed/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2021/03/19/git/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2020/10/13/hexo/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2016/09/23/linux-cat-system-config/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2018/11/19/linux-iptables/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.bgm.fun/2022/05/06/nginx-redirect-request-to-cdn/</loc>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2020/11/07/svn-observer/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2020/11/10/tsconfig-types/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
   <url>
     <loc>https://blog.bgm.fun/2020/11/05/webchunk-filename/</loc>
-    <lastmod>2021-07-31</lastmod>
+    <lastmod>2022-05-09</lastmod>
   </url>
 </urlset> 

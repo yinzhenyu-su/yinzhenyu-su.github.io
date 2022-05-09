@@ -149,7 +149,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">15</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -186,6 +186,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2022/05/06/nginx-redirect-request-to-cdn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/11/07/uBjhviVpEDtfk9x.jpg">
+      <meta itemprop="name" content="YZY">
+      <meta itemprop="description" content="前端工程师">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YZYの闲话">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/06/nginx-redirect-request-to-cdn/" class="post-title-link" itemprop="url">Nginx 重定向到cdn服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-06 19:16:00" itemprop="dateCreated datePublished" datetime="2022-05-06T19:16:00+08:00">2022-05-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Nginx-redirect-request-to-CDN-Server"><a href="#Nginx-redirect-request-to-CDN-Server" class="headerlink" title="Nginx redirect request to CDN Server"></a>Nginx redirect request to CDN Server</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">http</span> &#123;<br><br>  <span class="hljs-comment"># Split clients (approximately) equally based on</span><br>  <span class="hljs-comment"># client ip address</span><br>  <span class="hljs-attribute">split_clients</span> <span class="hljs-variable">$remote_addr</span> <span class="hljs-variable">$cdn_host</span> &#123;<br>    33% cdn1;<br>    33% cdn2;<br>    - cdn3;<br>  &#125;<br><br>  <span class="hljs-section">server</span> &#123;<br>    <span class="hljs-attribute">server_name</span> example.com;<br><br>    <span class="hljs-comment"># Use the variable defined by the split_clients block to determine</span><br>    <span class="hljs-comment"># the rewritten hostname for requests beginning with /images/</span><br>    <span class="hljs-attribute">location</span> /images/ &#123;<br>      <span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^</span> http://<span class="hljs-variable">$cdn_host</span>.example.com<span class="hljs-variable">$request_uri</span>? <span class="hljs-literal">permanent</span>;<br>    &#125;<br>    <span class="hljs-comment"># 匹配 类似 /eg/a.png /eg/static/a.png 的路径</span><br>    <span class="hljs-comment"># 向客户端发送一个301重定向响应</span><br>    <span class="hljs-comment"># 客户端在接收到该响应后会到对应的Location获取资源</span><br>    <span class="hljs-attribute">location</span> <span class="hljs-regexp">~* ^/eg(.*).(css|js|jpg|jpeg|png)$</span> &#123;<br>      <span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^</span> https://your.cdn.server<span class="hljs-variable">$request_uri</span>? <span class="hljs-literal">permanent</span>;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/09/50f2ea4a19754597.gif" alt="image-20220506191308000"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/05/09/ae66f89225270892.gif" alt="image-20220506191359992"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://blog.bgm.fun/2021/07/31/css-inline-fixed/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -209,10 +286,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-07-31 09:59:15 / 修改时间：10:46:08" itemprop="dateCreated datePublished" datetime="2021-07-31T09:59:15+08:00">2021-07-31</time>
+              <time title="创建时间：2021-07-31 09:59:15" itemprop="dateCreated datePublished" datetime="2021-07-31T09:59:15+08:00">2021-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -297,7 +380,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -370,7 +453,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
 
           
@@ -442,7 +525,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -541,7 +624,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
 
           
@@ -608,7 +691,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -692,7 +775,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -775,7 +858,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-31 10:46:08" itemprop="dateModified" datetime="2021-07-31T10:46:08+08:00">2021-07-31</time>
+                <time title="修改时间：2022-05-09 22:38:55" itemprop="dateModified" datetime="2022-05-09T22:38:55+08:00">2022-05-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -888,7 +971,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -901,7 +984,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -936,7 +1019,7 @@
 <div class="copyright">
   
   &copy; 2020 – 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
